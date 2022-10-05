@@ -7,7 +7,7 @@ import ProductCard from '../components/ProductCard';
 import items from '../lib/productsdata'
 import Link from 'next/link';
 
-export default function products (){
+export default function Products (){
     
     return (
         <div className={styles.app_container}>
@@ -16,7 +16,8 @@ export default function products (){
             <div className={products_css.container}>
                 {items.map(item => {
                     return(
-                        <ProductCard props={item}/>
+                        <ProductCard props={item}
+                        key={item.id}/>
                     )
                 })}
                 

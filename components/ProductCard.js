@@ -1,6 +1,8 @@
 import React from 'react';
 import products_css from '../styles/products.module.css'
 import Link from 'next/link';
+import Image from 'next/image'
+
 
 export default function ProductCard(props) {
     console.log(props);
@@ -10,7 +12,8 @@ export default function ProductCard(props) {
         
         <div className={products_css.product_container}>
             <div className={products_css.image_container}>
-                <img src={props.props.images.image1} className={products_css.image}></img>
+                <Image src={props.props.images.image1} className={products_css.image} alt=''/>
+                
             </div>
             <div className={products_css.description_container}>
                 <p className={products_css.text}>
@@ -19,7 +22,7 @@ export default function ProductCard(props) {
                 <div className={products_css.sizes_container}>
                     {props.props.sizes.map(item => {
                         return (
-                            <div className={products_css.size}>
+                            <div className={products_css.size} key={item.size}>
                                 <p className={products_css.size_text + item.available == true ? products_css.available : products_css.unavailable}>
                                     {item.size}
                                 </p>

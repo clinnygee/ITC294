@@ -6,6 +6,8 @@ import { getAllProductsIds, getProductData } from '../../lib/SaleItems';
 import styles from '../../styles/layout.module.css'
 import individualproducts from '../../styles/individualproducts.module.css'
 import products_css from '../../styles/products.module.css'
+import Image from 'next/image'
+
 
 export default function IndividualProduct ({productData}){
     console.log(productData)
@@ -32,7 +34,8 @@ export default function IndividualProduct ({productData}){
             <div className={individualproducts.container}>
                 <div className={individualproducts.pictures_container}>
                     <div className={products_css.image_container}>
-                        <img src={productData.images.image1} className={products_css.image}></img>
+                        <Image src={productData.images.image1} className={products_css.image} alt=''/>
+                        {/* <img ></img> */}
                     </div>
                 </div>
                 <div className={individualproducts.checkout_container}>
@@ -48,7 +51,7 @@ export default function IndividualProduct ({productData}){
                             console.log(product.size + ': selectedSize: ' + selectedSize);
                             console.log(product.size == selectedSize);
                             return (                                
-                                <div className={product.size == selectedSize ? individualproducts.selected_size_border : individualproducts.size_item_item_container} onClick={() => setSelectedSize(product.size)}> 
+                                <div key={product.size} className={product.size == selectedSize ? individualproducts.selected_size_border : individualproducts.size_item_item_container} onClick={() => setSelectedSize(product.size)}> 
                                     <p className={product.size == selectedSize ? individualproducts.selected_size_text : individualproducts.size_item}>{product.size}</p>
                                 </div>
                             )

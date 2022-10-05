@@ -1,6 +1,8 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
 import cartStyles from '../styles/cart.module.css'
+import Image from 'next/image'
+
 
 const CartItem = (item) => {
     const {removeItem} = useCart();
@@ -13,7 +15,8 @@ const CartItem = (item) => {
         <tr className={cartStyles.cart_row}>
             <td>
                 <div className={cartStyles.cart_image_container}>
-                    <img src={thisItem.images.image1} className={cartStyles.image}/>
+                    <Image src={thisItem.images.image1} className={cartStyles.image} alt=''/>
+                    
                     <div className={cartStyles.image_text_container}>
                         <p>{thisItem.name}</p>
                         <p>Size: {thisItem.selectedSize.selectedSize}</p>

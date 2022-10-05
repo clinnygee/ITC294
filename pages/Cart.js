@@ -5,7 +5,7 @@ import {  useCart } from "react-use-cart";
 import cartStyles from '../styles/cart.module.css';
 import CartItem from '../components/CartItem';
 
-export default function cart() {
+export default function Cart() {
     const {items} = useCart();
 
     console.log(items);
@@ -30,7 +30,7 @@ export default function cart() {
                         <tbody>
                             {items.map(item => {
                                 return(
-                                    <CartItem item={item}/>
+                                    <CartItem item={item} key={item.item.id}/>
                                 )
                             })}
                         </tbody>
