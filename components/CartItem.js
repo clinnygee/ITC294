@@ -15,7 +15,13 @@ const CartItem = (item) => {
         <tr className={cartStyles.cart_row}>
             <td>
                 <div className={cartStyles.cart_image_container}>
-                    <Image src={thisItem.images.image1} className={cartStyles.image} alt=''/>
+                    <Image 
+                    src={thisItem.images.image1} 
+                    className={cartStyles.image} 
+                    alt=''
+                    width={'150px'}
+                    height={'220px'}
+                    />
                     
                     <div className={cartStyles.image_text_container}>
                         <p>{thisItem.name}</p>

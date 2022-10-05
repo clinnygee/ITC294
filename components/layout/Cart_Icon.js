@@ -18,7 +18,7 @@ export default function Cart_Icon() {
     return (
         <div className={styles.cart}>
             <div className={styles.icon_container}>
-                <Link href="/cart">
+                <Link href="/Cart">
                     <div className={styles.cart_icon_link}>
                         <BsFillCartFill className={styles.icon}/>
                     </div>

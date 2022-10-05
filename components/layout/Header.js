@@ -13,7 +13,7 @@ export default function Header () {
                 <div className={styles.title}>
                     
                     <p className={styles.title_p}>
-                        The Name
+                        Big Birds Boutique
                     </p>
                 </div>
                 <Cart_Icon />
@@ -30,7 +30,7 @@ export default function Header () {
                         
                     </div>
                     <div className={styles.nav_item}>
-                    <Link href="/products">
+                    <Link href="/Products">
                     <p className={styles.nav_text}>
                             Products
                         </p>

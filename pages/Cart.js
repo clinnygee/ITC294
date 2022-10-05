@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/layout.module.css'
 import Header from '../components/layout/Header'
 import {  useCart } from "react-use-cart";
@@ -7,6 +7,18 @@ import CartItem from '../components/CartItem';
 
 export default function Cart() {
     const {items} = useCart();
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        console.log('in use effect');
+        console.log(items);
+        let initial = 0;
+        items.forEach(item => {
+            initial += item.price;
+        })
+        setTotal(initial);
+        
+    }, [items])
 
     console.log(items);
     return (
@@ -30,7 +42,7 @@ export default function Cart() {
                         <tbody>
                             {items.map(item => {
                                 return(
-                                    <CartItem item={item} key={item.item.id}/>
+                                    <CartItem item={item} key={item.id}/>
                                 )
                             })}
                         </tbody>
@@ -43,15 +55,15 @@ export default function Cart() {
                             </thead>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>$99.99</td>
+                                <td>${total}</td>
                             </tr>
                             <tr>
                                 <td>Tax (included)</td>
-                                <td>$9.99</td>
+                                <td>${total*.1}</td>
                             </tr>
                             <tr>
                                 <td>ORDER TOTAL</td>
-                                <td>$99.99</td>
+                                <td>${total}</td>
                             </tr>
                         </table>
                         <div className={cartStyles.checkout_button_container}>

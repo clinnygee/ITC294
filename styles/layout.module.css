@@ -84,3 +84,13 @@
     text-transform: uppercase;
     font-stretch: 100%;
 }
+
+.home_container {
+    display: flex;
+    width: 1200px;
+    flex-direction: row;
+}
+
+.home_image_container{
+    margin: 10px;
+}

@@ -24,7 +24,7 @@ export default function IndividualProduct ({productData}){
         cartProductData.selectedSize = {selectedSize: selectedSize};
         console.log(cartProductData);
         addItem(cartProductData);
-        router.push('/cart');
+        router.push('/Cart');
         
     };
 
@@ -34,7 +34,13 @@ export default function IndividualProduct ({productData}){
             <div className={individualproducts.container}>
                 <div className={individualproducts.pictures_container}>
                     <div className={products_css.image_container}>
-                        <Image src={productData.images.image1} className={products_css.image} alt=''/>
+                        <Image 
+                        src={productData.images.image1} 
+                        className={products_css.image} alt=''
+                        height={'600px'}
+                        width={'333px'}
+                        
+                        />
                         {/* <img ></img> */}
                     </div>
                 </div>

@@ -12,7 +12,13 @@ export default function ProductCard(props) {
         
         <div className={products_css.product_container}>
             <div className={products_css.image_container}>
-                <Image src={props.props.images.image1} className={products_css.image} alt=''/>
+                <Image 
+                src={props.props.images.image1} 
+                className={products_css.image} 
+                height={'600px'}
+                width={'333px'}
+                alt=''
+                />
                 
             </div>
             <div className={products_css.description_container}>
